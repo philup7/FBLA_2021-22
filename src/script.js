@@ -15,7 +15,7 @@ class TouristAttraction extends HTMLElement {
 
 customElements.define('tourist-attraction', TouristAttraction)
 
-let attractionArray = [
+let touristAttractionArray = [
     {
         "hasVisited" : false,//Boolean that represents if user has visited before
         "name" : "Philadelphia Museum of Art",
