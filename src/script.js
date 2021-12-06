@@ -14,7 +14,7 @@ class TouristAttraction extends HTMLElement {
 }
 
 customElements.define('tourist-attraction', TouristAttraction)
-/*
+
 let attractionArray = [
     {
         "hasVisited" : false,//Boolean that represents if user has visited before
@@ -49,7 +49,7 @@ let attractionArray = [
         "area" : "North Philadelphia",
         "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
     }
-];
-*/
+]
+
 
 
