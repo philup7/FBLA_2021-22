@@ -15,19 +15,19 @@ class TouristAttraction extends HTMLElement {
 
 customElements.define('tourist-attraction', TouristAttraction)
 
-let touristAttractionArray = [//Include all options for each attributes somewhere
-    {
+let touristAttractionArray = [
+    {//1
         "hasVisited" : false,//Boolean that represents if user has visited before
-        "name" : "Philadelphia Museum of Art",
-        "food" : true,
+        "name" : "Philadelphia Museum of Art",//Name of place
+        "food" : true,//Has food = true, no food = false
         "free" : false,//If it's free it's true, if it costs anything it's false
-        "setting" : "Indoors",
-        "address" : "2600 Benjamin Franklin Pkwy, Philadelphia, PA 19130",
-        "type" : "Museum",
-        "area" : "Center City",
-        "daysOpen" : ["Sunday", "Monday", "Thursday", "Friday", "Saturday"]
+        "setting" : "Indoors",//Indoors, outside, or mixed which is a combination of both
+        "address" : "2600 Benjamin Franklin Pkwy, Philadelphia, PA 19130",//Street address
+        "type" : "Museum",//Type: Museum, Restaurant, Historical, Shopping, Entertainment, Park, Food Market
+        "area" : "Center City",//Center city, West Philadelphia, South Philadelphia, North Philadelphia, Northwest Philadelphia, Northeast Philadelphia
+        "daysOpen" : ["Sunday", "Monday", "Thursday", "Friday", "Saturday"]//Days Open
     },
-    {
+    {//2
         "hasVisited" : false,
         "name" : "The Franklin Institute",
         "food" : true,
@@ -38,7 +38,7 @@ let touristAttractionArray = [//Include all options for each attributes somewher
         "area" : "Center City",
         "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
-    {
+    {//3
         "hasVisited" : false,
         "name" : "Eastern State Penitentiary",
         "food" : false,
@@ -73,7 +73,7 @@ let touristAttractionArray = [//Include all options for each attributes somewher
     },
     {//6
         "hasVisited" : false,
-        "name" : "Redding Terminal Market",
+        "name" : "Reading Terminal Market",
         "food" : true,
         "free" : false,
         "setting" : "Indoors",
@@ -126,16 +126,16 @@ let touristAttractionArray = [//Include all options for each attributes somewher
         "area" : "Northwest Philadelphia",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
-    {//11 not complete
+    {//11
         "hasVisited" : false,
         "name" : "Shofuso Japanese House and Garden",
         "food" : false,
-        "free" : true,
+        "free" : false,
         "setting" : "Outside",
         "address" : "Lansdowne Dr &, Horticultural Dr, Philadelphia, PA 19131",
         "type" : "Historical",
         "area" : "West Philadelphia",
-        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
     {//12
         "hasVisited" : false,
@@ -159,7 +159,7 @@ let touristAttractionArray = [//Include all options for each attributes somewher
         "area" : "Center City",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
-    {//14 mixed
+    {//14
         "hasVisited" : false,
         "name" : "Zahav",
         "food" : true,
@@ -181,7 +181,7 @@ let touristAttractionArray = [//Include all options for each attributes somewher
         "area" : "North Philadelphia",
         "daysOpen" : ["Sunday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
-    {//16 free? setting? dates?
+    {//16
         "hasVisited" : false,
         "name" : "Liberty Bell",
         "food" : false,
@@ -191,7 +191,96 @@ let touristAttractionArray = [//Include all options for each attributes somewher
         "type" : "Historical",
         "area" : "Center City",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//17
+        "hasVisited" : false,
+        "name" : "The Mann Center",
+        "food" : true,
+        "free" : false,
+        "setting" : "Outside",
+        "address" : "5201 Parkside Ave, Philadelphia, PA 19131",
+        "type" : "Entertainment",
+        "area" : "West Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//18
+        "hasVisited" : false,
+        "name" : "Kimmel Cultural Campus",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "300 S Broad St, Philadelphia, PA 19102",
+        "type" : "Entertainment",
+        "area" : "Center City",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//19 
+        "hasVisited" : false,
+        "name" : "Philadelphia Zoo",
+        "food" : true,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "3400 W Girard Ave, Philadelphia, PA 19104",
+        "type" : "Entertainment",
+        "area" : "West Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//20 
+        "hasVisited" : false,
+        "name" : "Dalessandro's Steaks",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "600 Wendover St, Philadelphia, PA 19128",
+        "type" : "Restaurant",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//21
+        "hasVisited" : false,
+        "name" : "Morris Arboretum of the University of Pennsylvania",
+        "food" : false,
+        "free" : false,
+        "setting" : "Outside",
+        "address" : "100 E Northwestern Ave, Philadelphia, PA 19118",
+        "type" : "Museum",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//22
+        "hasVisited" : false,
+        "name" : "Pennypack Park",
+        "food" : false,
+        "free" : true,
+        "setting" : "Outside",
+        "address" : "Pennypack Trail, Philadelphia, PA 19136",
+        "type" : "Park",
+        "area" : "Northeest Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//23
+        "hasVisited" : false,
+        "name" : "Barnes Foundation",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "2025 Benjamin Franklin Pkwy, Philadelphia, PA 19130",
+        "type" : "Museum",
+        "area" : "Center City",
+        "daysOpen" : ["Sunday", "Monday", "Thursday", "Friday", "Saturday"]
+    },
+    {//24
+        "hasVisited" : false,
+        "name" : "The Academy of Natural Sciences of Drexel University",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "1900 Benjamin Franklin Pkwy, Philadelphia, PA 19103",
+        "type" : "Museum",
+        "area" : "Center City",
+        "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
     }
 ]
-
+let cars = touristAttractionArray.filter(car => car.area === "Northwest Philadelphia");
+console.log(cars);
 
