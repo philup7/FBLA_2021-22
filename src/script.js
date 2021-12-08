@@ -43,7 +43,7 @@ let touristAttractionArray = [
         "name" : "Eastern State Penitentiary",
         "food" : false,
         "free" : false,
-        "setting" : "Mostly Indoors",
+        "setting" : "Mixed",
         "address" : "2027 Fairmount Ave, Philadelphia, PA 19130",
         "type" : "Historical",
         "area" : "North Philadelphia",
@@ -255,7 +255,7 @@ let touristAttractionArray = [
         "setting" : "Outside",
         "address" : "Pennypack Trail, Philadelphia, PA 19136",
         "type" : "Park",
-        "area" : "Northeest Philadelphia",
+        "area" : "Northeast Philadelphia",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
     {//23
@@ -279,8 +279,131 @@ let touristAttractionArray = [
         "type" : "Museum",
         "area" : "Center City",
         "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//25
+        "hasVisited" : false,
+        "name" : "Italian Market 9th Street",
+        "food" : true,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "919 S 9th St, Philadelphia, PA 19147",
+        "type" : "Food Market",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//26
+        "hasVisited" : false,
+        "name" : "Wells Fargo Center",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "3601 S Broad St, Philadelphia, PA 19148",
+        "type" : "Entertainment",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//27
+        "hasVisited" : false,
+        "name" : "Citizens Bank Park",
+        "food" : true,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "1 Citizens Bank Way, Philadelphia, PA 19148",
+        "type" : "Entertainment",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//28
+        "hasVisited" : false,
+        "name" : "Lincoln Financial Field",
+        "food" : true,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "One Lincoln Financial Field Way, Philadelphia, PA 19148",
+        "type" : "Entertainment",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//29
+        "hasVisited" : false,
+        "name" : "NetCost Market",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "11701 Bustleton Ave, Philadelphia, PA 19116",
+        "type" : "Food Market",
+        "area" : "Northeast Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//30
+        "hasVisited" : false,
+        "name" : "H Mart Philadelphia",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "6201 N Front St #124, Philadelphia, PA 19120",
+        "type" : "Food Market",
+        "area" : "North Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//31
+        "hasVisited" : false,
+        "name" : "The Fillmore Philadelphia",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "29 E Allen St, Philadelphia, PA 19123",
+        "type" : "Entertainment",
+        "area" : "North Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//32
+        "hasVisited" : false,
+        "name" : "The Met Philadelphia",
+        "food" : false,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "858 N Broad St, Philadelphia, PA 19130",
+        "type" : "Entertainment",
+        "area" : "North Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//33
+        "hasVisited" : false,
+        "name" : "The Met Philadelphia",
+        "food" : false,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "858 N Broad St, Philadelphia, PA 19130",
+        "type" : "Entertainment",
+        "area" : "North Philadelphia",
+        "daysOpen" : ["Days Vary"]
+    },
+    {//34 
+        "hasVisited" : false,
+        "name" : "Awbury Park",
+        "food" : false,
+        "free" : true,
+        "setting" : "Outside",
+        "address" : "6101 Ardleigh St, Philadelphia, PA 19138",
+        "type" : "Park",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//35
+        "hasVisited" : false,
+        "name" : "Philly SkatePlex",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "11586 Roosevelt Blvd, Philadelphia, PA 19116",
+        "type" : "Entertainment",
+        "area" : "Northeast Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Friday", "Saturday"]
     }
 ]
-let cars = touristAttractionArray.filter(car => car.area === "Northwest Philadelphia");
-console.log(cars);
 
+let cars1 = touristAttractionArray.filter(test => test.area == "Center City");
+console.log(cars1.length);
+let cars = touristAttractionArray.filter(car => JSON.stringify(car.daysOpen) == JSON.stringify(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]));//Figure out array of days nevermind use json stringify
+console.log(cars);
