@@ -400,6 +400,116 @@ let touristAttractionArray = [
         "type" : "Entertainment",
         "area" : "Northeast Philadelphia",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Friday", "Saturday"]
+    },
+    {//36
+        "hasVisited" : false,
+        "name" : "TERAKAWA RAMEN",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "125 S 40th St, Philadelphia, PA 19104",
+        "type" : "Restaurant",
+        "area" : "West Philadelphia",
+        "daysOpen" : ["Sunday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//37
+        "hasVisited" : false,
+        "name" : "The African American Museum in Philadelphia",
+        "food" : false,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "701 Arch St, Philadelphia, PA 19106",
+        "type" : "Museum",
+        "area" : "Center City",
+        "daysOpen" : ["Sunday", "Thursday", "Friday", "Saturday"]
+    },
+    {//38
+        "hasVisited" : false,
+        "name" : "Whitman Plaza",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "330 W Oregon Ave, Philadelphia, PA 19148",
+        "type" : "Shopping",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//39
+        "hasVisited" : false,
+        "name" : "Glen Foerd",
+        "food" : false,
+        "free" : true,
+        "setting" : "Mixed",
+        "address" : "5001 Grant Ave, Philadelphia, PA 19114",
+        "type" : "Historical",
+        "area" : "Northeast Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//40
+        "hasVisited" : false,
+        "name" : "Philadelphia Insectarium and Butterfly Pavilion",
+        "food" : false,
+        "free" : false,
+        "setting" : "Inside",
+        "address" : "8046 Frankford Ave, Philadelphia, PA 19136",
+        "type" : "Museum",
+        "area" : "Northeast Philadelphia",
+        "daysOpen" : ["Sunday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//41
+        "hasVisited" : false,
+        "name" : "Macaroni's",
+        "food" : true,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "9315 Old Bustleton Ave, Philadelphia, PA 19115",
+        "type" : "Restaurant",
+        "area" : "Northeast Philadelphia",
+        "daysOpen" : ["Sunday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//42
+        "hasVisited" : false,
+        "name" : "Market at the Fareway",
+        "food" : true,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "8221 Germantown Ave, Philadelphia, PA 19118",
+        "type" : "Food Market",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//43
+        "hasVisited" : false,
+        "name" : "Woodmere Art Museum",
+        "food" : false,
+        "free" : false,
+        "setting" : "Mixed",
+        "address" : "9201 Germantown Ave, Philadelphia, PA 19118",
+        "type" : "Museum",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//44
+        "hasVisited" : false,
+        "name" : "University of Pennsylvania Campus",
+        "food" : true,
+        "free" : true,
+        "setting" : "Mixed",
+        "address" : "Philadelphia, PA 19104",
+        "type" : "Historical",
+        "area" : "West Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//45 not done
+        "hasVisited" : false,
+        "name" : "Sullivan Progress Plaza Shopping Center",
+        "food" : true,
+        "free" : true,
+        "setting" : "Mixed",
+        "address" : "1501 N Broad St, Philadelphia, PA 19122",
+        "type" : "Shopping",
+        "area" : "North Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     }
 ]
 
