@@ -1,21 +1,53 @@
+const template = document.createElement('template');
+template.innerHTML = `
+    <style>
+        @import url('style.css')
+    </style>
+    <div class="tourist-attraction">
+        <div>
+        </div>
+        <div>
+            <h3></h3>
+            <p></p>
+        </div>
+    </div>
+`;
+
+
 class TouristAttraction extends HTMLElement {
     constructor() {
         super();
+
+        this.attachShadow({ mode: 'open'});
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+
     }
 
     connectedCallback() {
+        this.shadowRoot.querySelector('h3').innerHTML = `${this.getAttribute('name')}`;
+        this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('address')}`;
+        //this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('setting')}`;
+        console.log(this.getAttribute('name'));
+
+        /*
         const projectInfoContainer = document.createElement('p');
         projectInfoContainer.innerHTML = `${this.getAttribute('name')}`;
-        const icon = document.createElement('img');
-        icon.src = `${this.getAttribute('src')}`;
+
+        const addy = document.createElement('p');
+        addy.innerHTML = `${this.getAttribute('address')}`;
+
+
         this.appendChild(projectInfoContainer);
-        this.appendChild(icon);
+        this.appendChild(addy);*/
     }
 }
 
 customElements.define('tourist-attraction', TouristAttraction)
 
-let touristAttractionArray = [
+
+
+
+let touristAttractionsArray = [
     {//1
         "hasVisited" : false,//Boolean that represents if user has visited before
         "name" : "Philadelphia Museum of Art",//Name of place
@@ -500,20 +532,96 @@ let touristAttractionArray = [
         "area" : "West Philadelphia",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     },
-    {//45 not done
+    {//45
         "hasVisited" : false,
         "name" : "Sullivan Progress Plaza Shopping Center",
         "food" : true,
-        "free" : true,
-        "setting" : "Mixed",
+        "free" : false,
+        "setting" : "Indoors",
         "address" : "1501 N Broad St, Philadelphia, PA 19122",
         "type" : "Shopping",
         "area" : "North Philadelphia",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//46
+        "hasVisited" : false,
+        "name" : "FDR Park",
+        "food" : false,
+        "free" : true,
+        "setting" : "Outside",
+        "address" : "1500 Pattison Avenue &, S Broad St, Philadelphia, PA 19145",
+        "type" : "Park",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//47
+        "hasVisited" : false,
+        "name" : "Fairmount Park",
+        "food" : false,
+        "free" : true,
+        "setting" : "Outside",
+        "address" : "Reservoir Dr, Philadelphia, PA 19119",
+        "type" : "Park",
+        "area" : "West Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//48
+        "hasVisited" : false,
+        "name" : "Fairmount Park",
+        "food" : false,
+        "free" : true,
+        "setting" : "Outside",
+        "address" : "Reservoir Dr, Philadelphia, PA 19119",
+        "type" : "Park",
+        "area" : "West Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//49
+        "hasVisited" : false,
+        "name" : "Andorra Shopping Center",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "701 Cathedral Rd, Philadelphia, PA 19128",
+        "type" : "Shopping",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    },
+    {//50 not done
+        "hasVisited" : false,
+        "name" : "Andorra Shopping Center",
+        "food" : true,
+        "free" : false,
+        "setting" : "Indoors",
+        "address" : "701 Cathedral Rd, Philadelphia, PA 19128",
+        "type" : "Shopping",
+        "area" : "Northwest Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     }
 ]
-
+/*
 let cars1 = touristAttractionArray.filter(test => test.area == "Center City");
 console.log(cars1.length);
 let cars = touristAttractionArray.filter(car => JSON.stringify(car.daysOpen) == JSON.stringify(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]));//Figure out array of days nevermind use json stringify
 console.log(cars);
+*/
+for(let i = 0; i < touristAttractionsArray.length; i++) {
+    let el = document.createElement("tourist-attraction");//Individual ui element
+    //console.log(el);
+    for(var attribute in touristAttractionsArray[i]){//Loops over array and sets the attributes
+    //of the array objects into the elements
+        el.setAttribute(attribute, touristAttractionsArray[i][attribute])
+    }
+    //el.setAttribute("name", touristAttractionsArray[i].name);
+    document.getElementById("attractions-list").appendChild(el);//Appends each element into the ui list
+}
+/*
+document.getElementById('search-attractions').addEventListener('keydown', function(e) {
+    let el = document.getElementById('attractions-list').children;
+    for(let i = 0; i < el.length; i++){
+        if(el[i].contains()){
+            
+        }
+    }
+});
+*/
