@@ -27,7 +27,7 @@ class TouristAttraction extends HTMLElement {
         this.shadowRoot.querySelector('h3').innerHTML = `${this.getAttribute('name')}`;
         this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('address')}`;
         //this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('setting')}`;
-        console.log(this.getAttribute('name'));
+        //console.log(this.getAttribute('name'));
 
         /*
         const projectInfoContainer = document.createElement('p');
@@ -615,13 +615,31 @@ for(let i = 0; i < touristAttractionsArray.length; i++) {
     //el.setAttribute("name", touristAttractionsArray[i].name);
     document.getElementById("attractions-list").appendChild(el);//Appends each element into the ui list
 }
-/*
-document.getElementById('search-attractions').addEventListener('keydown', function(e) {
+
+
+function searchFunction(){
+    let input = document.getElementById('search-attractions');
+    let testingInput = input.value.toUpperCase();
     let el = document.getElementById('attractions-list').children;
+    let name;
     for(let i = 0; i < el.length; i++){
-        if(el[i].contains()){
-            
+        name = el[i].getAttribute('name');
+        name = name.toUpperCase();
+        if(name.includes(testingInput)){
+            el[i].style.display = "";
+        }
+        else{
+            el[i].style.display = "none";
         }
     }
-});
-*/
+}
+/*
+    document.getElementById('search-attractions').addEventListener('keydown', function(e) {
+        let el = document.getElementById('attractions-list').children;
+        for(let i = 0; i < el.length; i++){
+            if(el[i].contains()){
+                
+            }
+        }
+    });    
+    */
