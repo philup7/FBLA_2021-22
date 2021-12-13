@@ -12,6 +12,85 @@
     <div style="text-align: center;">
         <input type="search" id="search-attractions" onkeyup="searchFunction()"placeholder="Search by name" style="text-align: center;"/>
     </div>
+    <form>
+        <article id="preferences">
+            <span id="setting-checkboxes">
+                <p style="font-size: 24px; font-weight: bold;">Do you prefer indoors or outside?</p>
+                <label for="setting-one">
+                    <input type="checkbox" id="setting-one" />Indoors</label>
+                <label for="setting-two">
+                    <input type="checkbox" id="setting-two" />Outside</label>
+            </span>
+            <span id="cost-checkboxes">
+                <p style="font-size: 24px; font-weight: bold;">Do you want to pay for the attraction?</p>
+                <label for="cost-one">
+                    <input type="checkbox" id="cost-one" />No</label>
+                <label for="cost-two">
+                    <input type="checkbox" id="cost-two" />Sure</label>
+            </span>
+            <span id="food-checkboxes">
+                <p style="font-size: 24px; font-weight: bold;">Do you want food?</p>
+                <label for="food-one">
+                    <input type="checkbox" id="food-one" />No</label>
+                <label for="food-two">
+                    <input type="checkbox" id="food-two" />Sure</label>
+            </span>
+            <span id="area-checkboxes">
+                <p style="font-size: 24px; font-weight: bold;">What area of Philly?</p>
+                <label for="area-one">
+                    <input type="checkbox" id="area-one" />Center City</label>
+                <label for="area-two">
+                    <input type="checkbox" id="area-two" />West Philadelphia</label>
+                <label for="area-three">
+                    <input type="checkbox" id="area-three" />North Philadelphia</label>
+                <div></div>
+                <label for="area-four">
+                    <input type="checkbox" id="area-four" />South Philadelphia</label>
+                <label for="area-five">
+                    <input type="checkbox" id="area-five" />Northwest Philadelphia</label>
+                <label for="area-six">
+                    <input type="checkbox" id="area-six" />Northeast Philadelphia</label>
+            </span>
+            <span id="type-checkboxes">
+                <p style="font-size: 24px; font-weight: bold;">What type of attraction?</p>
+                <label for="type-one">
+                    <input type="checkbox" id="type-one" />Park</label>
+                <label for="type-two">
+                    <input type="checkbox" id="type-two" />Entertainment</label>
+                <label for="type-three">
+                    <input type="checkbox" id="type-three" />Shopping</label>
+                <div></div>
+                <label for="type-four">
+                    <input type="checkbox" id="type-four" />Food Market</label>
+                <label for="type-five">
+                    <input type="checkbox" id="type-five" />Museum</label>
+                <label for="type-six">
+                    <input type="checkbox" id="type-six" />Historical</label>
+                <label for="type-seven">
+                    <input type="checkbox" id="type-seven" />Restaurant</label>
+            </span>
+            <span id="days-checkboxes">
+                <p style="font-size: 24px; font-weight: bold;">What days can you go?</p>
+                <label for="days-one">
+                    <input type="checkbox" id="days-one" />Sunday</label>
+                <label for="days-two">
+                    <input type="checkbox" id="days-two" />Monday</label>
+                <label for="days-three">
+                    <input type="checkbox" id="days-three" />Tuesday</label>
+                <div></div>
+                <label for="days-four">
+                    <input type="checkbox" id="days-four" />Wednesday</label>
+                <label for="days-five">
+                    <input type="checkbox" id="days-five" />Thursday</label>
+                <label for="days-six">
+                    <input type="checkbox" id="days-six" />Friday</label>
+                <label for="days-seven">
+                    <input type="checkbox" id="days-seven" />Saturday</label>
+            </span>
+        </article> 
+        <input type="submit" id="submit-form" onclick="submit()" value="Find attractions!"/>
+    </form>
+    <hr style="border: 1px dashed black;">
     <!-- <tourist-attraction name="Park" src="https://avatars.githubusercontent.com/u/59579911?s=64&v=4"></tourist-attraction> -->
     <article id="attractions-list"></article>
     <script src="src/script.js"></script>

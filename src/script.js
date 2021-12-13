@@ -5,6 +5,7 @@ template.innerHTML = `
     </style>
     <div class="tourist-attraction">
         <div>
+            <input type="checkbox" id="visited-checkbox" onclick="visitedFunction()"/>
         </div>
         <div>
             <h3></h3>
@@ -12,7 +13,7 @@ template.innerHTML = `
         </div>
     </div>
 `;
-
+//make visited function work by accessing parents name
 
 class TouristAttraction extends HTMLElement {
     constructor() {
@@ -607,7 +608,7 @@ console.log(cars);
 */
 for(let i = 0; i < touristAttractionsArray.length; i++) {
     let el = document.createElement("tourist-attraction");//Individual ui element
-    //console.log(el);
+    console.log(el);
     for(var attribute in touristAttractionsArray[i]){//Loops over array and sets the attributes
     //of the array objects into the elements
         el.setAttribute(attribute, touristAttractionsArray[i][attribute])
@@ -633,13 +634,7 @@ function searchFunction(){
         }
     }
 }
-/*
-    document.getElementById('search-attractions').addEventListener('keydown', function(e) {
-        let el = document.getElementById('attractions-list').children;
-        for(let i = 0; i < el.length; i++){
-            if(el[i].contains()){
-                
-            }
-        }
-    });    
-    */
+
+function visitedFunction(){
+
+}
