@@ -14,7 +14,7 @@
     </div>
     <form>
         <article id="preferences">
-            <span id="setting-checkboxes">
+            <!-- <span id="setting-checkboxes">
                 <p style="font-size: 24px; font-weight: bold;">Do you prefer indoors or outside?</p>
                 <label for="setting-one">
                     <input type="checkbox" id="setting-one" />Indoors</label>
@@ -34,6 +34,28 @@
                     <input type="checkbox" id="food-one" />No</label>
                 <label for="food-two">
                     <input type="checkbox" id="food-two" />Sure</label>
+            </span> -->
+            <span id="setting-dropdown">
+                <p style="font-size: 24px; font-weight: bold;">Do you prefer indoors or outside?</p>
+                <select id="setting-select">
+                    <option value="0">No preference</option>
+                    <option value="1">Indoors</option>
+                    <option value="2">Outdoors</option>
+                </select>
+            </span>
+            <span id="cost-dropdown">
+                <p style="font-size: 24px; font-weight: bold;">Do you want to pay for the attraction?</p>               
+                <select id="cost-select">
+                    <option value="0">No preference</option>
+                    <option value="1">Must be free</option>
+                </select>
+            </span>
+            <span id="food-dropdown">
+                <p style="font-size: 24px; font-weight: bold;">Do you want food?</p>
+                <select id="food-select">
+                    <option value="0">No preference</option>
+                    <option value="1">Must have food</option>
+                </select>
             </span>
             <span id="area-checkboxes">
                 <p style="font-size: 24px; font-weight: bold;">What area of Philly?</p>
@@ -88,7 +110,7 @@
                     <input type="checkbox" id="days-seven" />Saturday</label>
             </span>
         </article> 
-        <input type="submit" id="submit-form" onclick="submit()" value="Find attractions!"/>
+        <input type="button" id="submit-form" onclick="submitForm()" value="Find attractions!">
     </form>
     <hr style="border: 1px dashed black;">
     <!-- <tourist-attraction name="Park" src="https://avatars.githubusercontent.com/u/59579911?s=64&v=4"></tourist-attraction> -->

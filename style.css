@@ -10,6 +10,9 @@ article {
     margin-bottom: 30px;
 }
 
+select{
+    width:100%;
+}
 #submit-form{
     margin-left: auto;
     margin-right: auto;
@@ -18,11 +21,16 @@ article {
     width: 500px;
     margin-bottom: 20px;
     font-size: 30px;
-    background-color: lightgrey;
+    background-color: white;
     border-color: black;
+    border-radius: 10px;
 }
 
 #submit-form:hover{
+    background-color: lightgrey;
+}
+
+#submit-form:active{
     background-color: lightslategrey;
 }
 
