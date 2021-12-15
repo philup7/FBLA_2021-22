@@ -6,7 +6,7 @@ template.innerHTML = `
     <div class="tourist-attraction">
         <div>
             <h6 id="visited-caption">Visited Before?</h6>
-            <input type="checkbox" id="visited-checkbox" onclick="visitedFunction()"/>
+            <input type="checkbox" id="visited-checkbox"/>
         </div>
         <div>
             <h3></h3>
@@ -14,7 +14,6 @@ template.innerHTML = `
         </div>
     </div>
 `;
-//make visited function work by accessing parents name
 
 class TouristAttraction extends HTMLElement {
     constructor() {
@@ -28,14 +27,6 @@ class TouristAttraction extends HTMLElement {
     connectedCallback() {
         this.shadowRoot.querySelector('h3').innerHTML = `${this.getAttribute('name')}`;
         this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('address')}`;
-
-        /*
-        const projectInfoContainer = document.createElement('p');
-        projectInfoContainer.innerHTML = `${this.getAttribute('name')}`;
-        const addy = document.createElement('p');
-        addy.innerHTML = `${this.getAttribute('address')}`;
-        this.appendChild(projectInfoContainer);
-        this.appendChild(addy);*/
     }
 }
 
@@ -652,7 +643,6 @@ for(let i = 0; i < touristAttractionsArray.length; i++) {
     //of the array objects into the elements
         el.setAttribute(attribute, touristAttractionsArray[i][attribute])
     }
-    //el.setAttribute("name", touristAttractionsArray[i].name);
     document.getElementById("attractions-list").appendChild(el);//Appends each element into the ui list
 }
 
@@ -690,7 +680,6 @@ let typePreference = [0,0,0,0,0,0,0];
 let daysPreference = [0,0,0,0,0,0,0];
 
 //Activates when a button to select preferences is clicked
-//
 function addPreference(id){
     const idType = String(id).substring(0, String(id).indexOf("-"));//idType will be the text of the id before the hypen(ex: days, type)
     const idChoice = String(id).substring(String(id).indexOf("-") + 1);//The choice after the hypen
@@ -807,8 +796,6 @@ let followsArea = touristAttractionsArray;
 let followsType = touristAttractionsArray;
 let followsDays = touristAttractionsArray;
 
-
-
 function filterAttractions(){
     followsSetting = touristAttractionsArray;
     followsCost = touristAttractionsArray;
@@ -816,7 +803,6 @@ function filterAttractions(){
     followsArea = touristAttractionsArray;
     followsType = touristAttractionsArray;
     followsDays = touristAttractionsArray;
-    
     
     settingSelect = document.getElementById('setting-select').value;
     settingFilter = settingOptions[settingSelect]
@@ -923,8 +909,8 @@ function submitForm(){
     let allMetNames = []
     for(let i = 0; i < allMet.length; i ++){
         allMetNames.push(allMet[i].name.toUpperCase())
+        console.log(allMet[i])
     }
-
     let el = document.getElementById('attractions-list').children;
     for(let i = 0; i < el.length; i++){
         let name = el[i].getAttribute('name').toUpperCase();
@@ -935,13 +921,8 @@ function submitForm(){
             el[i].style.display = "none";
         }
     }
-    
     for(let i = 0; i < touristAttractionsArray.length; i ++){
         touristAttractionsArray[i].numMatches = 0 ;
     }    
     
 }
-/*
-function visitedFunction(){
-}
-*/
