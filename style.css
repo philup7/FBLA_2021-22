@@ -46,14 +46,20 @@ span {
 
 #visited-checkbox{
     font-size: 100px;
-    width: 1.0em;
-    height: 1.0em;
+    width: 0.8em;
+    height: 0.8em;
+}
+
+#visited-caption{
+    font-size: medium;
+    margin: 0px;
+    text-align: center;
 }
 
 .tourist-attraction{
     width: 500px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.4fr 2fr;
     grid-gap: 10px;
     margin: 15px;
     border: black 5px solid;
@@ -61,6 +67,7 @@ span {
     position: relative;
     top: 0;
     transition: top ease 0.5s;
+    border-radius: 10px;
 }
 
 .tourist-attraction:hover{

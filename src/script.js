@@ -5,6 +5,7 @@ template.innerHTML = `
     </style>
     <div class="tourist-attraction">
         <div>
+            <h6 id="visited-caption">Visited Before?</h6>
             <input type="checkbox" id="visited-checkbox" onclick="visitedFunction()"/>
         </div>
         <div>
@@ -27,17 +28,12 @@ class TouristAttraction extends HTMLElement {
     connectedCallback() {
         this.shadowRoot.querySelector('h3').innerHTML = `${this.getAttribute('name')}`;
         this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('address')}`;
-        //this.shadowRoot.querySelector('p').innerHTML = `${this.getAttribute('setting')}`;
-        //console.log(this.getAttribute('name'));
 
         /*
         const projectInfoContainer = document.createElement('p');
         projectInfoContainer.innerHTML = `${this.getAttribute('name')}`;
-
         const addy = document.createElement('p');
         addy.innerHTML = `${this.getAttribute('address')}`;
-
-
         this.appendChild(projectInfoContainer);
         this.appendChild(addy);*/
     }
@@ -435,14 +431,14 @@ let touristAttractionsArray = [
     },
     {//33
         "hasVisited" : false,
-        "name" : "The Met Philadelphia",
-        "food" : false,
+        "name" : "National Constitution Center",
+        "food" : true,
         "free" : false,
         "setting" : "Indoors",
-        "address" : "858 N Broad St, Philadelphia, PA 19130",
-        "type" : "Entertainment",
-        "area" : "North Philadelphia",
-        "daysOpen" : ["Days Vary"],
+        "address" : "525 Arch St, Philadelphia, PA 19106",
+        "type" : "Museum",
+        "area" : "Center City",
+        "daysOpen" : ["Sunday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "numMatches" : 0
     },
     {//34 
@@ -615,11 +611,11 @@ let touristAttractionsArray = [
     },
     {//48
         "hasVisited" : false,
-        "name" : "Fairmount Park",
+        "name" : "Belmont Plateau",
         "food" : false,
         "free" : true,
         "setting" : "Outside",
-        "address" : "Reservoir Dr, Philadelphia, PA 19119",
+        "address" : "1800 Belmont Mansion Dr, Philadelphia, PA 19131",
         "type" : "Park",
         "area" : "West Philadelphia",
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -637,25 +633,19 @@ let touristAttractionsArray = [
         "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "numMatches" : 0
     },
-    {//50 not done
+    {//50
         "hasVisited" : false,
-        "name" : "Andorra Shopping Center",
-        "food" : true,
+        "name" : "Philadelphia's Magic Gardens",
+        "food" : false,
         "free" : false,
-        "setting" : "Indoors",
-        "address" : "701 Cathedral Rd, Philadelphia, PA 19128",
-        "type" : "Shopping",
-        "area" : "Northwest Philadelphia",
-        "daysOpen" : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "setting" : "Mixed",
+        "address" : "1020 South St, Philadelphia, PA 19147",
+        "type" : "Museum",
+        "area" : "South Philadelphia",
+        "daysOpen" : ["Sunday", "Monday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "numMatches" : 0
     }
 ]
-/*
-let cars1 = touristAttractionArray.filter(test => test.area == "Center City");
-console.log(cars1.length);
-let cars = touristAttractionArray.filter(car => JSON.stringify(car.daysOpen) == JSON.stringify(["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]));//Figure out array of days nevermind use json stringify
-console.log(cars);
-*/
 for(let i = 0; i < touristAttractionsArray.length; i++) {
     let el = document.createElement("tourist-attraction");//Individual ui element
     for(var attribute in touristAttractionsArray[i]){//Loops over array and sets the attributes
@@ -810,7 +800,7 @@ let areaOptions = ["Center City", "West Philadelphia", "North Philadelphia", "So
 let typeOptions = ["Park", "Entertainment", "Shopping", "Food Market", "Museum", "Historical", "Restaurant"]
 let daysOptions = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-let firstPreferenceList = touristAttractionsArray;
+let followsSetting = touristAttractionsArray;
 let followsCost = touristAttractionsArray;
 let followsFood = touristAttractionsArray;
 let followsArea = touristAttractionsArray;
@@ -820,6 +810,14 @@ let followsDays = touristAttractionsArray;
 
 
 function filterAttractions(){
+    followsSetting = touristAttractionsArray;
+    followsCost = touristAttractionsArray;
+    followsFood = touristAttractionsArray;
+    followsArea = touristAttractionsArray;
+    followsType = touristAttractionsArray;
+    followsDays = touristAttractionsArray;
+    
+    
     settingSelect = document.getElementById('setting-select').value;
     settingFilter = settingOptions[settingSelect]
     
@@ -851,105 +849,42 @@ function filterAttractions(){
     }
 
     if(settingSelect > 0){
-        console.log(settingSelect)
-        firstPreferenceList = touristAttractionsArray.filter(test => test.setting == settingFilter);
-        console.log(firstPreferenceList)
-        if(costSelect > 0){
-            followsCost = touristAttractionsArray.filter(test => test.free == costFilter);
-            console.log(followsCost)
-        }
-        if(foodSelect > 0){
-            followsFood = touristAttractionsArray.filter(test => test.food == foodFilter);
-        }
-        if(typePreference.includes(1)){
-            followsArea = touristAttractionsArray.filter(test => areaFilter.includes(test.area));
-        }
-        if(typePreference.includes(1)){
-            followsType = touristAttractionsArray.filter(test => typeFilter.includes(test.type));
-        }
-        if(daysPreference.includes(1)){
-            followsDays = touristAttractionsArray.filter(test => daysFilter.includes(days.type));
-            return;
-        }
-        else{
-            return;
-        }
+        followsSetting = touristAttractionsArray.filter(test => test.setting == settingFilter);
     }
-    else if(costSelect > 0){
-        firstPreferenceList = touristAttractionsArray.filter(test => test.free == costFilter);
-        if(foodSelect > 0){
-            followsFood = touristAttractionsArray.filter(test => test.food == foodFilter);
-        }
-        if(typePreference.includes(1)){
-            followsArea = touristAttractionsArray.filter(test => areaFilter.includes(test.area));
-        }
-        if(typePreference.includes(1)){
-            followsType = touristAttractionsArray.filter(test => typeFilter.includes(test.type));
-        }
-        if(daysPreference.includes(1)){
-            followsDays = touristAttractionsArray.filter(test => daysFilter.includes(days.type));
-            return;
-        }
-        else{
-            return;
-        }
+    if(costSelect > 0){
+        followsCost = touristAttractionsArray.filter(test => test.free == costFilter);
     }
-    else if(foodSelect > 0){
-        firstPreferenceList = touristAttractionsArray.filter(test => test.food == foodFilter);
-        if(typePreference.includes(1)){
-            followsArea = touristAttractionsArray.filter(test => areaFilter.includes(test.area));
-        }
-        if(typePreference.includes(1)){
-            followsType = touristAttractionsArray.filter(test => typeFilter.includes(test.type));
-        }
-        if(daysPreference.includes(1)){
-            followsDays = touristAttractionsArray.filter(test => daysFilter.includes(days.type));
-            return;
-        }
-        else{
-            return;
-        }
+    if(foodSelect > 0){
+        followsFood = touristAttractionsArray.filter(test => test.food == foodFilter);
     }
-    else if(areaPreference.includes(1)){
-        firstPreferenceList = touristAttractionsArray.filter(test => areaFilter.includes(test.area));
-        if(typePreference.includes(1)){
-            followsType = touristAttractionsArray.filter(test => typeFilter.includes(test.type));
-        }
-        if(daysPreference.includes(1)){
-            followsDays = touristAttractionsArray.filter(test => daysFilter.includes(days.type));
-            return;
-        }
-        else{
-            return;
-        }
+    if(areaPreference.includes(1)){
+        followsArea = touristAttractionsArray.filter(test => areaFilter.includes(test.area));
     }
-    else if(typePreference.includes(1)){
-        firstPreferenceList = touristAttractionsArray.filter(test => typeFilter.includes(test.type));
-        if(daysPreference.includes(1)){
-            followsDays = touristAttractionsArray.filter(test => daysFilter.includes(days.type));
-            return;
-        }
-        else{
-            return;
-        }
+    if(typePreference.includes(1)){
+        followsType = touristAttractionsArray.filter(test => typeFilter.includes(test.type));
     }
-    else if(daysPreference.includes(1)){
-        firstPreferenceList = touristAttractionsArray.filter(test => daysFilter.includes(days.type));
-        return;
-    }
-    else{
-        return;
+    if(daysPreference.includes(1)){
+        //followsDays = touristAttractionsArray.filter(test => daysFilter.includes(test.daysOpen));
+        followsDays = []
+        for(let i = 0; i < touristAttractionsArray.length; i++){
+            for(let j = 0; j < daysFilter.length; j ++){
+                if(touristAttractionsArray[i].daysOpen.includes(daysFilter[j])){
+                    followsDays.push(touristAttractionsArray[i])
+                    break;
+                }
+            }
+        }
     }
 }
 
 function submitForm(){
     filterAttractions();
-    for(let i = 0; i < firstPreferenceList.length; i ++){
-        currentAttraction = firstPreferenceList[i];
+    for(let i = 0; i < touristAttractionsArray.length; i ++){
+        currentAttraction = touristAttractionsArray[i];
         for(let j = 0; j < attributeOrder.length; j++){
             let list;
             if(j == 0){
-                list = firstPreferenceList;
+                list = followsSetting;
             }
             else if(j == 1){
                 list = followsCost;
@@ -967,11 +902,18 @@ function submitForm(){
                 list = followsDays;
             }
             if(list.length > 0){
-                console.log(list)
                 for(let x = 0; x < list.length; x++)
                 {
-                    if(list[x].name == currentAttraction.name){
-                        currentAttraction.numMatches++;
+                    if(j == 0){
+                        if(list[x].name == currentAttraction.name || currentAttraction.setting == "Mixed"){
+                            currentAttraction.numMatches++;
+                            break;
+                        }
+                    }
+                    else{
+                        if(list[x].name == currentAttraction.name){
+                            currentAttraction.numMatches++;
+                        }
                     }
                 }
             }
@@ -982,24 +924,24 @@ function submitForm(){
     for(let i = 0; i < allMet.length; i ++){
         allMetNames.push(allMet[i].name.toUpperCase())
     }
-    console.log(allMet)
-    console.log(allMetNames)
 
     let el = document.getElementById('attractions-list').children;
     for(let i = 0; i < el.length; i++){
         let name = el[i].getAttribute('name').toUpperCase();
-        console.log(name)
         if(allMetNames.includes(name)){
             el[i].style.display = "";
-            console.log(el[i])
         }
         else{
             el[i].style.display = "none";
         }
     }
+    
+    for(let i = 0; i < touristAttractionsArray.length; i ++){
+        touristAttractionsArray[i].numMatches = 0 ;
+    }    
+    
 }
 /*
 function visitedFunction(){
-
 }
 */
