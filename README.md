@@ -2,7 +2,7 @@
 
 ## Topic
 
-You have been hired by your state or local area’s tourism bureau to develop a program that suggests attractions(can be tourist attractions, restaurants, shopping, things to do, etc.)to potential visitors. Your program will allowusers to search for attractions in the area based on desired attributes, such as location, type of attraction, andamenities. Your program must include at least 50 attractions, and users must be able to define at least five desiredattributes to searchfor an attraction.
+You have been hired by your state or local area’s tourism bureau to develop a program that suggests attractions(can be tourist attractions, restaurants, shopping, things to do, etc.) to potential visitors. Your program will allow users to search for attractions in the area based on desired attributes, such as location, type of attraction, and amenities. Your program must include at least 50 attractions, and users must be able to define at least five desired attributes to search for an attraction.
 
 ## Overview
 
